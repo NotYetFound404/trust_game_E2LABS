@@ -3,7 +3,7 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='Trust_Game', app_sequence=['trust_simple'], num_demo_participants=2
+        name='Trust_Game', app_sequence=['survey', 'trust'], num_demo_participants=2
     )
 ]
 
@@ -24,7 +24,7 @@ SESSION_FIELDS = []
 LANGUAGE_CODE = 'en'
 
 # e.g. EUR, GBP, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'PEN'
 USE_POINTS = True
 
 ROOMS = [

@@ -31,6 +31,7 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
+    name = models.StringField(label="Your name:")
     pass
 
 
