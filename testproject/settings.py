@@ -7,6 +7,9 @@ SESSION_CONFIGS = [
     ),
     dict(
         name='SOLO_Surv', app_sequence=['survey'], num_demo_participants=2
+    ),
+    dict(
+        name='TRUST_simple', app_sequence=['trust_simple'], num_demo_participants=2
     )
 ]
 
