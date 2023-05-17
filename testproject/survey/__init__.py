@@ -16,44 +16,20 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    age = models.IntegerField(label='What is your age?', min=13, max=125)
-    gender = models.StringField(
-        choices=[['Male', 'Male'], ['Female', 'Female']],
-        label='What is your gender?',
-        widget=widgets.RadioSelect,
-    )
-    crt_bat = models.IntegerField(
-        label='''
-        A bat and a ball cost 22 dollars in total.
-        The bat costs 20 dollars more than the ball.
-        How many dollars does the ball cost?'''
-    )
-    crt_widget = models.IntegerField(
-        label='''
-        If it takes 5 machines 5 minutes to make 5 widgets,
-        how many minutes would it take 100 machines to make 100 widgets?
-        '''
-    )
-    crt_lake = models.IntegerField(
-        label='''
-        In a lake, there is a patch of lily pads.
-        Every day, the patch doubles in size.
-        If it takes 48 days for the patch to cover the entire lake,
-        how many days would it take for the patch to cover half of the lake?
-        '''
-    )
+    send_B = models.IntegerField(label='Si fueras el jugador A, ¿Cuánto enviarías al jugador B?', choices=[
+                                 1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    send_A_if_3 = models.IntegerField(
+        label='Si fueras el jugador B y recibieras 3 puntos, ¿Cuánto enviarías al jugador A?', choices=[1, 2, 3])
+    send_A_if_6 = models.IntegerField(
+        label='Si fueras el jugador B y recibieras 6 puntos, ¿Cuánto enviarías al jugador A?', choices=[1, 2, 3, 4, 5, 6])
+    send_A_if_9 = models.IntegerField(
+        label='Si fueras el jugador B y recibieras 9 puntos, ¿Cuánto enviarías al jugador A?', choices=[1, 2, 3, 4, 5, 6, 7, 8, 9])
 
 
 # FUNCTIONS
 # PAGES
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['age', 'gender']
+    form_fields = ['send_B', 'send_A_if_3', 'send_A_if_6', 'send_A_if_9']
 
-
-class CognitiveReflectionTest(Page):
-    form_model = 'player'
-    form_fields = ['crt_bat', 'crt_widget', 'crt_lake']
-
-
-page_sequence = [Demographics, CognitiveReflectionTest]
+page_sequence = [Demographics]
